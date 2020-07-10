@@ -27,13 +27,18 @@ class DeleteFragment : Fragment() {
             val nombre = et_nombre.text.toString()
             val deudorDAO = SesionROOM.database.deudorDAO()
             val deudor = deudorDAO.buscarDeudor(nombre)
-        if(deudor !=null){
-            deudorDAO.borrarDeudor(deudor)
-            et_nombre.setText("")
-        }else{
-            Toast.makeText(context, "Deudor no encontrado", Toast.LENGTH_SHORT).show()
-        }
+            if (et_nombre.text.toString().isNullOrEmpty()) {
+                Toast.makeText(context, "Digite un Nombre", Toast.LENGTH_SHORT).show()
+            } else {
+                if (deudor != null) {
+                    Toast.makeText(context, "Se ha borrado ${deudor.nombre}", Toast.LENGTH_SHORT).show()
+                    deudorDAO.borrarDeudor(deudor)
+                    et_nombre.setText("")
+                } else {
+                    Toast.makeText(context, "Deudor no encontrado", Toast.LENGTH_SHORT).show()
+                }
 
+            }
         }
     }
 

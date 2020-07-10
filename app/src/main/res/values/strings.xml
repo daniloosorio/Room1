@@ -22,4 +22,12 @@
     <string name="deuda">Deuda</string>
     <string name="contrasena">Password</string>
     <string name="correo">E-mail</string>
+
+    <string-array name="paises">
+        <item>Seleccione un Pais</item>
+        <item>Brasil</item>
+        <item>España</item>
+        <item>Argentina</item>
+        <item>colombia</item>
+    </string-array>
 </resources>

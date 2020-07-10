@@ -3,11 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient"
     android:orientation="vertical"
     tools:context=".ui.delete.DeleteFragment" >
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
+        android:layout_marginTop="50dp"
+        android:layout_marginHorizontal="30dp"
+        android:background="@drawable/et_circular"
         android:layout_height="wrap_content">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -19,9 +23,11 @@
 
     <Button
         android:id="@+id/bt_eliminar"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="30dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
+        android:background="@drawable/bt_circular"
         android:text="@string/eliminar"
         android:textColor="@android:color/white" />
 </LinearLayout>

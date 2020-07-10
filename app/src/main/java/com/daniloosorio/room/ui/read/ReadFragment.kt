@@ -24,11 +24,13 @@ class ReadFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        tv_resultado.visibility= View.GONE
         bt_buscar.setOnClickListener {
             val nombre =et_nombre.text.toString()
             val deudorDAO :DeudorDAO = SesionROOM.database.deudorDAO()
             val deudor = deudorDAO.buscarDeudor(nombre)
             if(deudor != null){
+                tv_resultado.visibility= View.VISIBLE
                 tv_resultado.text ="nombre :${deudor.nombre}\n" +
                         "telefono :${deudor.telefono}\n" +
                         "cantidad: ${deudor.cantidad}\n"

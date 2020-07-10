@@ -9,3 +9,4 @@ class Deudor (
     @ColumnInfo(name = "Telefono") val telefono :String,
     @ColumnInfo(name = "Cantidad") val cantidad :Long
 )
+
