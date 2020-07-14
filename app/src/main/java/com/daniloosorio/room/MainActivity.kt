@@ -12,17 +12,19 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
-    lateinit var correo : String
+    //lateinit var correo : String
+    val mAuth: FirebaseAuth = FirebaseAuth.getInstance()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        correo = intent.extras?.getString("correo").toString()
+        //correo = intent.extras?.getString("correo").toString()
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
         val userDAO = SesionROOM.database2.userDAO()
-        val user = userDAO.buscarUser(correo)
-        Toast.makeText(this, "Bienvenido ${user.nombre2}", Toast.LENGTH_SHORT).show()
+        //val user = userDAO.buscarUser(correo)
+        //Toast.makeText(this, "Bienvenido ${user.nombre2}", Toast.LENGTH_SHORT).show()
         val navController = findNavController(R.id.nav_host_fragment)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
@@ -42,10 +44,11 @@ class MainActivity : AppCompatActivity() {
         when (item.itemId) {
             R.id.perfil-> {
                 val intent = Intent(this, PerfilActivity::class.java)
-                intent.putExtra("correo",correo)
+               // intent.putExtra("correo",correo)
                 startActivity(intent)
             }
             R.id.cerrar -> {
+                mAuth.signOut()
                 val intent = Intent(this, LoginActivity::class.java)
                 startActivity(intent)
                 finish()

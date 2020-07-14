@@ -2,8 +2,8 @@ package com.daniloosorio.room
 
 import android.app.Application
 import androidx.room.Room
-import com.daniloosorio.room.model.DeudorDataBase
-import com.daniloosorio.room.model.UserDatabase
+import com.daniloosorio.room.model.local.DeudorDataBase
+import com.daniloosorio.room.model.local.UserDatabase
 
 class SesionROOM :Application(){
     companion object{

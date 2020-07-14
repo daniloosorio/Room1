@@ -1,4 +1,4 @@
-package com.daniloosorio.room.model
+package com.daniloosorio.room.model.local
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
