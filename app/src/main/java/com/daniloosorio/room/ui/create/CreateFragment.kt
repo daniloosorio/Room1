@@ -124,6 +124,7 @@ private  val REQUEST_IMAGE_CAPTURE =1234
         et_nombre.setText("")
         et_telefono.setText("")
         et_cantidad.setText("")
+        Toast.makeText(context, "Registro exitoso", Toast.LENGTH_SHORT).show()
     }
 }
 
